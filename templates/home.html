@@ -36,7 +36,7 @@
 
 <div class="top_right">
     <form action="/logout" method="POST">
-        <input type="submit" value="Logout" class="btn btn-primary" style="width: 95px;height: 40px;">
+        <input type="submit" value="Cerrar Sesión" class="btn btn-primary" style="width: 115px;height: 40px;">
     </form>
 </div>
 
@@ -47,7 +47,7 @@
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button style="width:100%;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          <h1> <div class="text_left"> Last Update: {{ lastDataTime }} </div>  <div class="text_right">  &#11191; </div> </h1>
+          <h1> <div class="text_left"> Última Actualización: {{ lastDataTime }} </div>  <div class="text_right">  &#11191; </div> </h1>
         </button>
       </h5>
     </div>
@@ -58,9 +58,9 @@
                 <div class="card bg-light mb-3" style="max-width: 18rem;">
                   <div class="card-header">
                     {% if systemOn %}
-                        <h5>System: ON</h5>
+                        <h5>Sistema: ON</h5>
                     {% else %}
-                         <h5>System: OFF</h5>
+                         <h5>Sistema: OFF</h5>
                     {% endif %}
                   </div>
                   <div class="card-body">
@@ -83,7 +83,7 @@
 
 
                 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                    <div class="card-header"><h5>Temperature:</h5></div>
+                    <div class="card-header"><h5>Temperatura:</h5></div>
                     <div class="card-body">
                     <h5 class="card-title"></h5>
                     <h3 class="card-text">{{ lastTemperature }}°C</h3>
@@ -92,7 +92,7 @@
 
 
                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                    <div class="card-header"><h5>Humidity:</h5></div>
+                    <div class="card-header"><h5>Humedad:</h5></div>
                     <div class="card-body">
                     <h5 class="card-title"></h5>
                     <h3 class="card-text">{{ lastHumidity }}%</h3>
@@ -101,7 +101,7 @@
 
 
                 <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                    <div class="card-header"><h5>Atmospheric Pressure:</h5></div>
+                    <div class="card-header"><h5>Presión Atmosférica:</h5></div>
                     <div class="card-body">
                     <h5 class="card-title"></h5>
                     <h3 class="card-text">{{ lastPressure }}hPa</h3>
