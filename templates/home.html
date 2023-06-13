@@ -5,14 +5,14 @@
 .center {
     margin: auto;
     width: 60%;
-    border: 0px solid #73AD21;
+    border: 0px solid #2ed56b;
     padding: 10px;
 }
 
 .top_right{
     position: absolute;
     top: 10px;
-    right: 60px;
+    right: 80px;
 }
 
 .text_right {
@@ -23,9 +23,39 @@
     float: left;
 }
 
+.horizontal {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    flex: 1;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.card-header {
+    background-color: #0062cc;
+}
+
+.card-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 20px;
+}
+
+.modern-font {
+    font-family: "Century Gothic", sans-serif;
+}
+
 </style>
     <meta charset="UTF-8">
-    <title>Realtime Weather Station</title>
+    <title>Weather Station</title>
      <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -47,15 +77,14 @@
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button style="width:100%;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          <h1> <div class="text_left"> Última Actualización: {{ lastDataTime }} </div>  <div class="text_right">  &#11191; </div> </h1>
+          <h3> <div class="text_left"> Weather Station : {{ lastDataTime }} </div>  <div class="text_right">  &#11191; </div> </h3>
         </button>
       </h5>
     </div>
-
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-
+  
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
-                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div class="card bg-info mb-3" style="max-width: 17rem;">
                   <div class="card-header">
                     {% if systemOn %}
                         <h5>Sistema: ON</h5>
@@ -65,7 +94,7 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title"></h5>
-                        <div class="traffic-light">
+                    <div class="traffic-light justify-content-start">
 
                             {% if systemOn %}
                               <input type="radio" name="rag1" class="color1" value="1">
@@ -82,30 +111,32 @@
                 </div>
 
 
-                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-                    <div class="card-header"><h5>Temperatura:</h5></div>
-                    <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <h3 class="card-text">{{ lastTemperature }}°C</h3>
-                  </div>
-                </div>
+                <div class="horizontal">
+                    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                        <div class="card-header"><h5>Temperatura:</h5></div>
+                        <div class="card-body">
+                            <h1 class="card-title"></h1>
+                            <h1 class="card-text">{{ lastTemperature }}°C</h1>
+                        </div>
+                    </div>
 
 
-                  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-                    <div class="card-header"><h5>Humedad:</h5></div>
-                    <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <h3 class="card-text">{{ lastHumidity }}%</h3>
-                  </div>
-                </div>
+                    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                        <div class="card-header"><h5>Humedad:</h5></div>
+                        <div class="card-body">
+                            <h1 class="card-title"></h1>
+                            <h1 class="card-text">{{ lastHumidity }}%</h1>
+                        </div>
+                    </div>
 
 
-                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-                    <div class="card-header"><h5>Presión Atmosférica:</h5></div>
-                    <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <h3 class="card-text">{{ lastPressure }}hPa</h3>
-                </div>
+                    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                        <div class="card-header"><h5>Presión Atmosférica:</h5></div>
+                        <div class="card-body">
+                            <h1 class="card-title"></h1>
+                            <h1 class="card-text">{{ lastPressure }}hPa</h1>
+                        </div>
+                    </div>
                 </div>
 
 
